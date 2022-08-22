@@ -1,0 +1,19 @@
+{
+    "name": "abdelrahman/php-mvc",
+    "autoload": {
+        "psr-4": {
+            "Abdelrahman\\PhpMvc\\": "src/",
+            "App\\": "App/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Abdelrahman",
+            "email": "abdelrahman.elnegery@lexmodo.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.4",
+        "symfony/var-dumper": "^6.1"
+    }
+}
