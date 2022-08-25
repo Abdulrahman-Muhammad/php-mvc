@@ -17,20 +17,17 @@ class Route {
         $this->response = $response;
     }
 
-
-
-
     public static array $routes = [];
 
         public static function get($route , callable|array|string $action){
 
-            self::$routes['GET'][$route] = $action;
+            self::$routes['get'][$route] = $action;
         }
 
 
         public static function post($route , callable|array|string $action){
 
-            self::$routes['POST'][$route] = $action;
+            self::$routes['post'][$route] = $action;
         }
 
         public function resolve(){
@@ -41,7 +38,21 @@ class Route {
 
             $actions = self::$routes[$method][$path] ?? false;
 
-            var_dump($actions);
+            if(!$actions){
+                return;
+            }
+
+            //404 handeling 
+
+            if(is_callable($actions)){
+
+                call_user_func_array($actions , []);
+            }
+
+            if(is_array($actions)){
+
+                call_user_func_array([ new $actions[0] , $actions[1]] ,[]);
+            }
 
         }
 }
