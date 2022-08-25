@@ -7,7 +7,9 @@ class HomeController
     public function index() {
 
 
-        echo 'hello';
+        $users = User::all();
+
+        return view('home' , compact('users'));
 
     }
 }
