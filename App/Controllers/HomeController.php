@@ -2,14 +2,16 @@
 
 namespace App\Controllers;
 
+use Abdelrahman\PhpMvc\View\view;
+
 class HomeController
 {
-    public function index() {
+    public function index()
+    {
 
 
-        $users = User::all();
+        // $users = User::all();
 
-        return view('home' , compact('users'));
-
+        return view::make('home');
     }
 }

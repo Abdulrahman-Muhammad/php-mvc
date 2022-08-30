@@ -34,7 +34,7 @@
             Jobs
           </a>
           <a class="navbar-item">
-            Contact 
+            Contact
           </a>
           <hr class="navbar-divider">
           <a class="navbar-item">
