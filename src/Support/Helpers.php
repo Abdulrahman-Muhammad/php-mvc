@@ -1,5 +1,7 @@
 <?php
 
+use Abdelrahman\PhpMvc\View\view;
+
 // namespace Abdelrahman\PhpMvc\Support;
 
 // class Helpers
@@ -52,5 +54,16 @@ if (!function_exists('view_path')) {
     function view_path()
     {
         return base_path() . "Views/";
+    }
+}
+
+
+
+
+if (!function_exists('view')) {
+
+    function view($view , $params = [])
+    {
+        view::make($view , $params);
     }
 }

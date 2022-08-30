@@ -29,7 +29,7 @@ class view
     protected static function getViewContnet($view, $isErrors = false, $params = [])
     {
 
-        $path = $isErrors ? view_path() . '/errors' : view_path();
+        $path = $isErrors ? view_path() . 'errors/' : view_path();
 
         if (str_contains($view, '.')) {
 
@@ -42,13 +42,33 @@ class view
             }
 
             $view = $path . end($views) . '.php';
-        }else {
+        } else {
 
             $view = $path . $view . '.php';
         }
 
-        var_dump($view);
+
+        foreach ($params as $param => $value) {
+
+            $$param = $value;
+        }
+
+        if ($isErrors) {
+            include $view;
+        } else {
+
+            ob_start();
+
+            include $view;
+
+            return ob_get_clean();
+        }
+    }
 
 
+    public static function makeError($error)
+    {
+
+        self::getViewContnet($error, true);
     }
 }

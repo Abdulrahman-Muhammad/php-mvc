@@ -2,8 +2,9 @@
 
 namespace Abdelrahman\PhpMvc\Http;
 
-use Abdelrahman\PhpMvc\Http\Request;
+use Abdelrahman\PhpMvc\View\view;
 
+use Abdelrahman\PhpMvc\Http\Request;
 use Abdelrahman\PhpMvc\Http\Response;
 
 class Route
@@ -67,6 +68,11 @@ class Route
         $method = $this->request->method();
 
         $actions = self::$routes[$method][$path] ?? false;
+
+        if (!array_key_exists($path, self::$routes[$method])) {
+
+            view::makeError(404);
+        }
 
         if (!$actions) {
             return;
