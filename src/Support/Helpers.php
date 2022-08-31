@@ -62,8 +62,8 @@ if (!function_exists('view_path')) {
 
 if (!function_exists('view')) {
 
-    function view($view , $params = [])
+    function view($view, $params = [])
     {
-        view::make($view , $params);
+        view::make($view, $params);
     }
 }

@@ -7,9 +7,10 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
 
-  <title>MVC</title>
+  <title> <?= env('APP_NAME') ?> </title>
 
 
+  <?php include base_path() . 'Views/partials/navbar.php'; ?>
 </head>
 
 <body>
