@@ -15,38 +15,33 @@ class Application
 
     protected Response $response;
 
-    public function __construct(Route $route ,Request $request ,  Response $response){
+    public function __construct()
+    {
 
-        $this->route = $route;
 
-        $this->request = $request;
+        $this->request = new Request;
 
-        $this->response = $response;
+        $this->response = new Response;
 
+        $this->route = new Route($this->request, $this->response);
     }
 
-    public function run(){
+    public function run()
+    {
 
         $this->route->resolve();
     }
 
-    public function __get($name){
+    public function __get($name)
+    {
 
-        if(property_exists($this , $name)){
+        if (property_exists($this, $name)) {
 
             return $this->name;
-
-
         }
-
-
     }
 
-    public function __set($name , $value ){
-
-
+    public function __set($name, $value)
+    {
     }
-    
-        
-    
 }

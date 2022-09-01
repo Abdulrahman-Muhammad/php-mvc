@@ -1,6 +1,7 @@
 <?php
 
 use Abdelrahman\PhpMvc\View\view;
+use Abdelrahman\PhpMvc\Application;
 
 // namespace Abdelrahman\PhpMvc\Support;
 
@@ -23,6 +24,20 @@ if (!function_exists('env')) {
     }
 }
 
+
+
+if (!function_exists('app')) {
+    function app()
+    {
+        static $instance = null;
+
+        if (!$instance) {
+            $instance = new Application;
+        }
+
+        return $instance;
+    }
+}
 
 if (!function_exists('value')) {
     /**
