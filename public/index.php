@@ -1,9 +1,10 @@
 <?php
 
+use Dotenv\Dotenv;
 use Abdelrahman\PhpMvc\Http\Route;
+use Abdelrahman\PhpMvc\Support\Arr;
 use Abdelrahman\PhpMvc\Http\Request;
 use Abdelrahman\PhpMvc\Http\Response;
-use Dotenv\Dotenv;
 
 require_once __DIR__ . "/../src/Support/Helpers.php";
 
@@ -17,3 +18,4 @@ $env->load();
 
 app()->run();
 
+var_dump ( Arr::only([ ' username ' => ' ahmedosama ' ,'email' => ' test@gmail.com ' ], [' username '  , 'email']) ) ;

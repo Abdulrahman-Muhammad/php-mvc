@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'f8c1d9fafb8d8191bc437a4ac8dde1ee5a861928',
+        'reference' => 'b8ba24d2eac131f6890d4c8927a41de1cfe7b036',
         'name' => 'abdelrahman/php-mvc',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'f8c1d9fafb8d8191bc437a4ac8dde1ee5a861928',
+            'reference' => 'b8ba24d2eac131f6890d4c8927a41de1cfe7b036',
             'dev_requirement' => false,
         ),
         'doctrine/instantiator' => array(
