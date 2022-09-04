@@ -18,4 +18,4 @@ $env->load();
 
 app()->run();
 
-var_dump ( Arr::only([ ' username ' => ' ahmedosama ' ,'email' => ' test@gmail.com ' ], [' username '  , 'email']) ) ;
+var_dump(Arr::has(['db' => ['connection' => ['default' => 'mysql']]] , 'db.connection.default'));
