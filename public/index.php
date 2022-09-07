@@ -18,4 +18,23 @@ $env->load();
 
 app()->run();
 
-var_dump(Arr::has(['db' => ['connection' => ['default' => 'mysql']]] , 'db.connection.default'));
+// var_dump(Arr::has(['db' => ['connection' => ['default' => 'mysql']]] , 'db.connection.default'));
+
+// var_dump(Arr::last(['one' , 'two' , 'three'] , function($item){
+
+//     var_dump($item);
+// }));
+
+$arr = [
+    'db' => [
+        'connections' => [
+            'default' => 'mysql'
+        ]
+    ]
+]; 
+
+// var_dump($arr);
+
+(Arr::forget($arr, 'db.connections.default'));
+
+var_dump($arr);

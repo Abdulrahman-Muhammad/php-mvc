@@ -106,4 +106,50 @@ class Arr
 
         return value($default);
     }
+
+    public static function forget($array, $keys)
+    {
+
+        $original = &$array;
+
+        $keys = (array) $keys;
+
+        if (!count($keys)) {
+
+            return;
+        }
+
+        foreach ($keys as $key) {
+
+
+            if (static::exists($array, $key)) {
+                unset($array[$key]);
+
+                continue;
+            }
+
+            $parts = explode('.', $key);
+
+
+            while (count($parts) > 1 ) {
+
+                // var_dump( $parts);
+
+                $part = array_shift($parts);
+
+                if (isset($array[$part]) && is_array($array[$part])) {
+
+                    $array = &$array[$part];
+                } else {
+
+                    continue;
+                }
+
+                unset($array[array_shift($parts)]);
+            }
+
+            // var_dump($array[array_shift($parts)]);
+
+        }
+    }
 }
